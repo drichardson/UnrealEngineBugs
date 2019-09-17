@@ -9,16 +9,10 @@
 
 struct FMyStruct
 {
-	FVector2D Location;
-	float Angle;
 	FSlateBrush Brush;
-	FLinearColor Tint;
 
-	FMyStruct(FVector2D const& Loc, float Ang, FSlateBrush const& Brush_, FLinearColor const& Tint_)
-		: Location(Loc)
-		, Angle(Ang)
-		, Brush(Brush)
-		, Tint(Tint_)
+	FMyStruct(FSlateBrush const& Brush)
+		: Brush(Brush)
 	{
 	}
 };
@@ -35,29 +29,5 @@ public:
 	UPROPERTY(EditAnywhere)
 	FSlateBrush Brush;
 
-	UPROPERTY(EditAnywhere)
-	FSlateBrush Brush2;
-
-	UPROPERTY(EditAnywhere)
-	unsigned CopyCount;
-
-	UPROPERTY(EditAnywhere)
-	bool bUseEmplace;
-
-	UPROPERTY(EditAnywhere)
-	bool bReserveSpace;
-
-	UPROPERTY(EditAnywhere)
-	bool bUseMyTint;
-
-	UPROPERTY(EditAnywhere)
-	FLinearColor MyTint;
-
-	UPROPERTY(EditAnywhere)
-	bool bCallSelectBrush;
-
 	void BeginPlay() override;
-
-private:
-	FSlateBrush SelectBrush();
 };
