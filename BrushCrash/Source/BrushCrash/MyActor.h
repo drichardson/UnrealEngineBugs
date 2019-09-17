@@ -53,9 +53,11 @@ public:
 	UPROPERTY(EditAnywhere)
 	FLinearColor MyTint;
 
+	UPROPERTY(EditAnywhere)
+	bool bCallSelectBrush;
+
 	void BeginPlay() override;
 
 private:
 	FSlateBrush SelectBrush();
-	int BrushCounter;
 };
