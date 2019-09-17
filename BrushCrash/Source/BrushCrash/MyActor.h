@@ -11,7 +11,9 @@ struct FMyStruct
 {
 	FSlateBrush Brush;
 
-	FMyStruct(FSlateBrush const& Brush)
+#error Crash occurs here because of accidental initialization of Brush with itself, rather than Brush_.
+    
+	FMyStruct(FSlateBrush const& Brush_)
 		: Brush(Brush)
 	{
 	}
