@@ -11,3 +11,5 @@ The scene consists of:
 When r.AllowOcclusionQueries=1, the problems occurs. When r.AllowOcclusionQueries=0, the problem does not occur.
 
 See screenshot for to see what problem looks like.
+
+![Problem Screenshot](https://github.com/drichardson/ue4bugs/blob/master/OcclusionProblem/IncorrectCulling.png)
