@@ -12,9 +12,11 @@ When r.AllowOcclusionQueries=1, the problems occurs. When r.AllowOcclusionQuerie
 
 This problem does not occur when Hierarchical Z-buffering algorithm is selected for occlusion culling by setting the following in DefaultEngine.init:
 
+```
 [/Script/Engine.RendererSettings]
 r.AllowOcclusionQueries=True
 r.HZBOcclusion=1
+```
 
 
 See screenshot for to see what problem looks like.
