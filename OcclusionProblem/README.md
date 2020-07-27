@@ -10,7 +10,7 @@ The scene consists of:
 
 When r.AllowOcclusionQueries=1, the problems occurs. When r.AllowOcclusionQueries=0, the problem does not occur.
 
-This problem does not occur when Hierarchical Z-buffering algorithm is selected for occlusion culling by setting the following in DefaultEngine.init:
+This problem does not occur when Hierarchical Z-buffering algorithm is selected for occlusion culling by setting the following in DefaultEngine.ini:
 
 ```
 [/Script/Engine.RendererSettings]
