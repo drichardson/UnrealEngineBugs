@@ -1,7 +1,10 @@
-.vs/
-Build/
-Binaries/
-Intermediate/
-DerivedDataCache/
 *.sln
+*.swp
+.vs/
+Binaries/
+Build/
+DerivedDataCache/
+Intermediate/
 Saved/
+session.vim
+tags
