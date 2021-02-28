@@ -50,7 +50,7 @@ global=warning
 
 It isn't clear if the warning is a problem or not. It appears to be that
 blueprint generated archetypes that exists in the level aren't handled by
-AActor::CheckActorComponents().
+`AActor::CheckActorComponents()`.
 
 Regardless, I think user's should be able to set the global log level to
 warning or error, without being flooded with a bunch of errors they didn't see
