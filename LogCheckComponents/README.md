@@ -1,4 +1,6 @@
-# LogCheckCompnents warngs when component added to blueprint sub-class
+# LogCheckCompnents errors
+After setting the global log level to warning, LogCheckComponent spews errors
+about "SerializedComponent archetype is not the CDO".
 
 ## Steps to Repro
 
