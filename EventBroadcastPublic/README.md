@@ -1,10 +1,24 @@
 ## Status
 
-Last Tested: 4.26 (bug still occurs)
+Last Tested: 4.26. Bug still occurs. Based on note below, unlikely to be fixed.
 
 Discovered in 4.21
 
 Tracked by [UE-67922](https://issues.unrealengine.com/issue/UE-67922).
+
+According to this note in DelegateCombinations.h (from git commit
+555cddd7e4232870c7aebc2417e1793919b0420c), DECLARE_EVENT appears to be
+deprecated:
+
+Engine/Source/Runtime/Core/Public/Delegates/DelegateSignatureImpl.inl
+```c++
+/**
+ * Declares a multicast delegate that is meant to only be activated from OwningType
+ * NOTE: This behavior is not enforced and this type should be considered deprecated for new delegates, use normal multicast instead
+ */
+#define DECLARE_EVENT( OwningType, EventName ) FUNC_DECLARE_EVENT( OwningType, EventName, void )
+```
+
 
 ## Report
 
