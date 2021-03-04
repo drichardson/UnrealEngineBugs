@@ -1,6 +1,7 @@
 ## Status
 
 Last Tested: 4.26 (bug still occurs)
+
 Discovered in 4.21
 
 Tracked by [UE-67922](https://issues.unrealengine.com/issue/UE-67922).
