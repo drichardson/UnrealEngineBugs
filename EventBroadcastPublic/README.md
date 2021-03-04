@@ -3,6 +3,8 @@
 Last Tested: 4.26 (bug still occurs)
 Discovered in 4.21
 
+Tracked by [UE-67922](https://issues.unrealengine.com/issue/UE-67922).
+
 ## Report
 
 As of UE4 b70f31f6645, DECLARE_EVENT produces a class with a public Broadcast()
