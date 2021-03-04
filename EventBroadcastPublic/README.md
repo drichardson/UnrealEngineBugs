@@ -10,7 +10,6 @@ According to this note in DelegateCombinations.h (from git commit
 555cddd7e4232870c7aebc2417e1793919b0420c), DECLARE_EVENT appears to be
 deprecated:
 
-Engine/Source/Runtime/Core/Public/Delegates/DelegateSignatureImpl.inl
 ```c++
 /**
  * Declares a multicast delegate that is meant to only be activated from OwningType
