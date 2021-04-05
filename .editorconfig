@@ -1,0 +1,23 @@
+# EditorConfig - https://EditorConfig.org/
+
+# C++ files handled by .clang-format.
+
+# top-most EditorConfig file
+root = true
+
+[*.{cpp,c,h}]
+charset = utf-8
+indent_size = 4
+indent_style = tab
+
+[*.cs]
+charset = utf-8
+indent_size = 4
+indent_style = space
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.uproject]
+charset = utf-8
+indent_style = tab
+

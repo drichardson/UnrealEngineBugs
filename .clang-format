@@ -1,0 +1,42 @@
+﻿---
+#
+# Test configuration changes here:
+# https://zed0.co.uk/clang-format-configurator/
+#
+AccessModifierOffset: -4
+AlignConsecutiveMacros: true
+AlignEscapedNewlines: Left
+AlignTrailingComments: true
+AllowAllConstructorInitializersOnNextLine: false
+AllowShortFunctionsOnASingleLine: InlineOnly
+AlwaysBreakTemplateDeclarations: Yes
+BinPackArguments: false
+BinPackParameters: false
+BreakBeforeBraces: Allman
+BreakConstructorInitializers: BeforeComma
+ColumnLimit: 100
+ConstructorInitializerAllOnOneLineOrOnePerLine: true
+ConstructorInitializerIndentWidth: 4
+ContinuationIndentWidth: 4
+IncludeBlocks: Regroup
+IncludeCategories:
+  - Regex: '^"CoreMinimal\.h"'
+    Priority: -1
+  - Regex: '.*\.generated\.h'
+    Priority: 100
+  - Regex: '".*"'
+    Priority: 1
+  - Regex: '^<.*\.(h)>'
+    Priority: 3
+  - Regex: '^<.*>'
+    Priority: 4
+IndentWidth: 4
+Language: Cpp
+PointerAlignment: Left
+ReflowComments: true
+SortIncludes: true
+SpaceBeforeRangeBasedForLoopColon: true
+Standard: Cpp11
+TabWidth: 4
+UseTab: Always
+...
