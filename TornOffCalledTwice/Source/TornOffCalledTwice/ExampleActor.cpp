@@ -4,22 +4,18 @@
 
 DEFINE_LOG_CATEGORY_STATIC(LogExampleActor, Log, All);
 
+static TAutoConsoleVariable<float> CVarExampleActorLifeSpan(
+	TEXT("ExampleActorLifeSpan"), 2.0f, TEXT("LifeSpan of example actor after TearOff called."));
+
 AExampleActor::AExampleActor()
 {
 	UE_LOG(LogExampleActor, Log, TEXT("AExampleActor::AExampleActor"));
 	bReplicates = true;
 
-	PrimaryActorTick.bCanEverTick = true;
+	PrimaryActorTick.bCanEverTick = false;
 	PrimaryActorTick.bStartWithTickEnabled = false;
 
 	RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
-}
-
-void AExampleActor::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
-{
-	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
-
-	DOREPLIFETIME(AExampleActor, Counter);
 }
 
 void AExampleActor::BeginPlay()
@@ -28,11 +24,9 @@ void AExampleActor::BeginPlay()
 
 	if (HasAuthority())
 	{
-		UE_LOG(LogExampleActor, Log, TEXT("Setting timer to tear off actor"));
+		UE_LOG(LogExampleActor, Log, TEXT("Setting timer to tear off actor in 2 seconds..."));
 		FTimerHandle Handle;
-		GetWorldTimerManager().SetTimer(Handle, this, &AExampleActor::OnTimerFired, 5.0f, false);
-
-		SetActorTickEnabled(true);
+		GetWorldTimerManager().SetTimer(Handle, this, &AExampleActor::OnTimerFired, 2.0f, false);
 	}
 	else
 	{
@@ -46,39 +40,27 @@ void AExampleActor::OnTimerFired()
 	UE_LOG(LogExampleActor, Log, TEXT("OnTimerFired. Calling TearOff"));
 	TearOff();
 
-#if 0
-	Destroy();
-#else
+	//
+	// BUG HERE: If SetLifeSpan is called, TornOff will be called twice.
+	//
 	// TornOff will be called when lifespan expired.
-	SetLifeSpan(1.0f);
-#endif
+	float const LifeSpan = CVarExampleActorLifeSpan.GetValueOnGameThread();
+	UE_LOG(LogExampleActor, Log, TEXT("Calling SetLifeSpan(%f)"), LifeSpan);
+	SetLifeSpan(LifeSpan);
 }
 
 void AExampleActor::TornOff()
 {
 	Super::TornOff();
-	UE_LOG(LogExampleActor, Log, TEXT("AExampleActor::TornOff"));
-}
-
-void AExampleActor::Tick(float DeltaSeconds)
-{
-	check(HasAuthority());
-	Super::Tick(DeltaSeconds);
-	Counter++;
-}
-
-void AExampleActor::OnRep_Counter()
-{
-	check(!HasAuthority());
-	UE_LOG(LogExampleActor, Log, TEXT("Counter=%d TearOff=%d"), Counter, GetTearOff());
+	TornOffCounter++;
+	UE_LOG(LogExampleActor, Log, TEXT("AExampleActor::TornOff called %d times"), TornOffCounter);
 }
 
 void AExampleActor::LifeSpanExpired()
 {
 	UE_LOG(LogExampleActor,
 		   Log,
-		   TEXT("LifeSpanExpired: Counter=%d TearOff=%d Authority=%d"),
-		   Counter,
+		   TEXT("LifeSpanExpired: TearOff=%d Authority=%d"),
 		   GetTearOff(),
 		   HasAuthority());
 
