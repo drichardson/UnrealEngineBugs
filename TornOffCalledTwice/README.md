@@ -8,7 +8,7 @@ SetLifeSpan or not.
 
 1. Open NewMap
 2. In console, run:
-    
+        
     ExampleActorLifeSpan 0
     Net.RepDriver.Enable 1
 
