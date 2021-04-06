@@ -9,8 +9,8 @@ SetLifeSpan or not.
 1. Open NewMap
 2. In console, run:
         
-    ExampleActorLifeSpan 0
-    Net.RepDriver.Enable 1
+       ExampleActorLifeSpan 0
+       Net.RepDriver.Enable 1
 
 3. Run PIE.
 
@@ -19,9 +19,9 @@ SetLifeSpan or not.
 
 1. Open NewMap
 2. In console, run:
-    
-    ExampleActorLifeSpan 2
-    Net.RepDriver.Enable 1
+
+       ExampleActorLifeSpan 2
+       Net.RepDriver.Enable 1
 
 3. Run PIE.
 
@@ -30,8 +30,8 @@ SetLifeSpan or not.
 1. Open NewMap
 2. In console, run:
     
-    ExampleActorLifeSpan 0
-    Net.RepDriver.Enable 0
+       ExampleActorLifeSpan 0
+       Net.RepDriver.Enable 0
 
 3. Run PIE.
 
@@ -40,8 +40,8 @@ SetLifeSpan or not.
 1. Open NewMap
 2. In console, run:
     
-    ExampleActorLifeSpan 2
-    Net.RepDriver.Enable 0
+       ExampleActorLifeSpan 2
+       Net.RepDriver.Enable 0
 
 3. Run PIE.
 
