@@ -1,5 +1,10 @@
 # Audio Pop when using AudioModulation Control Bus Mixes
 
+AudioModulation Control Bus Mix with Volume set to 0 does not effect audio
+played in BeginPlay after Control Bus Mix as been activated.
+
+See [YouTube Demonstration of problem](https://youtu.be/mvo1vnXT8ek).
+
 ## Steps to Reproduce
 
 1. Open the Audio Modulation level
