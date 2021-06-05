@@ -1,6 +1,6 @@
 # Update
 Possible fix here:
-https://github.com/EpicGames/UnrealEngine/pull/8110/files
+https://github.com/EpicGames/UnrealEngine/pull/8110
 
 # Summary
 Demonstrates same propblem as AudioPop, execpt in UE 4 master (tested with

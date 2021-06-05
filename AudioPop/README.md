@@ -1,6 +1,6 @@
 # Update
 Possible fix here:
-https://github.com/EpicGames/UnrealEngine/pull/8110/files
+https://github.com/EpicGames/UnrealEngine/pull/8110
 
 # Audio Pop when using AudioModulation Control Bus Mixes
 
