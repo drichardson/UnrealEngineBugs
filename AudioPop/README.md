@@ -1,3 +1,7 @@
+# Update
+Possible fix here:
+https://github.com/EpicGames/UnrealEngine/pull/8110/files
+
 # Audio Pop when using AudioModulation Control Bus Mixes
 
 AudioModulation Control Bus Mix with Volume set to 0 does not effect audio
