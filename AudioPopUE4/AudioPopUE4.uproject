@@ -1,0 +1,12 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "{946C28BC-4D1B-1962-1591-79B8F665FA4A}",
+	"Category": "",
+	"Description": "",
+	"Plugins": [
+		{
+			"Name": "AudioModulation",
+			"Enabled": true
+		}
+	]
+}
