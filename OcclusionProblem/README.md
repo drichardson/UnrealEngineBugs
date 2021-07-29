@@ -1,5 +1,9 @@
 # Occlusion Problem
 
+UPDATE: This issue is a known artifact of Occlusion Queries being generated in
+the previous frame as described by [GPU Geams - Chaper 29.  Efficient Occlusion
+Culling](https://developer.nvidia.com/gpugems/gpugems/part-v-performance-and-practicalities/chapter-29-efficient-occlusion-culling). It is not a bug, it is a design choice made to prevent Occlusion Queries from stalling the GPU.
+
 Demonstrates problem in UE4 where incorrect occlusion culling does not render items that should be visible.
 
 [YouTube demo of problem](https://www.youtube.com/watch?v=qCqvRDISoW8)
